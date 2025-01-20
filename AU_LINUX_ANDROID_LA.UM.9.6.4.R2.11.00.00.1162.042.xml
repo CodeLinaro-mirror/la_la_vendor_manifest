@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <refs>
+    <image name="LA.QSSI.11.0.R2" project="la/system/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_LINUX_ANDROID_LA.QSSI.11.0.R2.11.00.00.1161.014" targets="dummy"/>
+  </refs>
   <remote fetch="https://git.codelinaro.org/clo/la" name="clo-la"/>
   <default remote="clo-la" revision="dummy_revision" sync-c="true" sync-tags="false"/>
   <project remote="clo-la" name="device/qcom/common" path="device/qcom/common" revision="4241c5a67ee650a5adfad7402ae98ab60190208f" upstream="refs/heads/qcom-devices.lnx.6.0.r71-rel">
