@@ -32,6 +32,9 @@
   </project>
   <project remote="clo-la" name="platform/hardware/qcom/thermal" path="vendor/qcom/opensource/thermal-hal" revision="d191a4eb45d7533d25811068588affec36c10e31" upstream="refs/heads/ppat-corepower.lnx.13.0.r34-rel"/>
   <project remote="clo-la" name="platform/hardware/qcom/wlan" path="hardware/qcom/wlan" revision="b3822230df1220b63d1464c4bc64fb706ffe6b32" upstream="refs/heads/wlan-aosp.lnx.13.0.r11-rel"/>
+  <project remote="clo-la" name="platform/packages/apps/SnapdragonCamera" path="packages/apps/SnapdragonCamera" revision="67dc2784615bcaff76d181aee9aac1715e54ec74" upstream="refs/heads/camera-SnapdragonCamera.lnx.4.2.r8-rel">
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/app_snapcam_product.mk" src="app_snapcam_system_product.mk"/>
+  </project>
   <project remote="clo-la" name="platform/system/qcom" path="vendor/qcom/opensource/softap" revision="cc8f8cdb766c8ded1b22fae8c3290c6531d739f5" upstream="refs/heads/wlan-service-mcc.lnx.1.0.r39-rel"/>
   <project remote="clo-la" name="platform/vendor/nxp/opensource/driver" path="vendor/nxp/opensource/driver" revision="4f1ba352a21bc539507903187ebc894302564aac" upstream="refs/heads/nfc-driver.lnx.13.0.r9-rel">
     <linkfile dest="vendor/qcom/defs/product-defs/vendor/nfc-kernel-dlkm-vendor-product.mk" src="nfc_kernel_dlkm_vendor_product.mk"/>
