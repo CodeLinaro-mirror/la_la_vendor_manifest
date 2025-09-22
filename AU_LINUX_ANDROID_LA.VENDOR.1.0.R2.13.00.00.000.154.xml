@@ -107,6 +107,10 @@
   <project remote="clo-la" name="platform/vendor/qcom/parrot" path="device/qcom/parrot" revision="d160f73ca065d3269529c956083e503cfa39994d" upstream="refs/heads/qcom-devices.lnx.7.0.r7-rel"/>
   <project remote="clo-la" name="platform/vendor/qcom/taro" path="device/qcom/taro" revision="5495087cf1fae95b73cf9b7f4eb9585897227948" upstream="refs/heads/qcom-devices.lnx.7.0.r7-rel"/>
   <project remote="clo-la" name="platform/vendor/qcom/wlan" path="device/qcom/wlan" revision="4184fa6143438477fea15380ec86727e290dc25a" upstream="refs/heads/wlan-service-mcc.lnx.1.0.r18-rel"/>
+  <project remote="clo-la" name="platform/vendor/st/opensource/eSE-driver" path="vendor/stm/opensource/eSE-driver" revision="9a5dd29ce58e274cb3a07108e74c136383065ee0" upstream="refs/heads/ese-stm-vendor.lnx.12.0.r1-rel">
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/ese_kernel_product.mk" src="ese_kernel_product.mk"/>
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/ese_kernel_board.mk" src="ese_kernel_board.mk"/>
+  </project>
   <project remote="clo-la" name="platform/vendor/stm/opensource/keymaster" path="vendor/stm/opensource/keymaster" revision="64388175e896a5ac99deec6d6f687d510bea4bc2" upstream="refs/heads/ese-stm-vendor.lnx.12.0.r1-rel">
     <linkfile dest="vendor/qcom/defs/board-defs/vendor/keymint_stm_vendor_board.mk" src="keymint/keymint_stm_vendor_board.mk"/>
     <linkfile dest="vendor/qcom/defs/product-defs/vendor/keymint_stm_vendor_product.mk" src="keymint/keymint_stm_vendor_product.mk"/>
