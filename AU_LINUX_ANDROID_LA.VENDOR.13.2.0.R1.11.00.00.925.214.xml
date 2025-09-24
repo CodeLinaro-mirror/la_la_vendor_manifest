@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <refs>
-    <image name="AUDIO.LA.8.0.R1" project="techpack/audio/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_TECHPACK_AUDIO.LA.8.0.R1.00.00.00.000.095" targets="dummy"/>
-    <image name="CAMERA.LA.3.0.R1" project="techpack/camera/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_TECHPACK_CAMERA.LA.3.0.R1.00.00.00.000.082" targets="dummy"/>
     <image name="LA.QSSI.13.0.R1" project="la/system/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_LINUX_ANDROID_LA.QSSI.13.0.R1.13.00.00.913.121.00" targets="dummy"/>
-    <image name="DISPLAY.LA.3.0.R1" project="techpack/display/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_TECHPACK_DISPLAY.LA.3.0.R1.00.00.00.000.111" targets="dummy"/>
-    <image name="KERNEL.PLATFORM.2.0.R1" project="kernelplatform/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_LINUX_KERNEL.PLATFORM.2.0.R1.00.00.00.004.149" targets="dummy"/>
-    <image name="CV.LA.1.0.R1" project="techpack/cv/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_TECHPACK_CV.LA.1.0.R1.00.00.00.000.040" targets="dummy"/>
-    <image name="GRAPHICS.LA.1.0.R1" project="techpack/graphics/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_TECHPACK_GRAPHICS.LA.1.0.R1.00.00.00.000.069" targets="dummy"/>
-    <image name="VIDEO.LA.3.0.R1" project="techpack/video/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_TECHPACK_VIDEO.LA.3.0.R1.00.00.00.000.070" targets="dummy"/>
   </refs>
-  <remote fetch="https://git.codelinaro.org/clo/la" name="clo-la"/>
+    <remote fetch="https://git.codelinaro.org/clo/la" name="clo-la"/>
   <default remote="clo-la" revision="dummy_revision" sync-c="true" sync-tags="false"/>
   <project remote="clo-la" name="device/qcom/common" path="device/qcom/common" revision="552612e1449f2987887bd39a5e0b0d8a9e3a9828" upstream="refs/heads/qcom-devices.lnx.13.0.r1-rel">
     <linkfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
