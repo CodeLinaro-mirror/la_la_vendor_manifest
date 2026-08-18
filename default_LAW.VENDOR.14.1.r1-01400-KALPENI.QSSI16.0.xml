@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <refs>
+    <image name="VIDEO.LA.2.6.r1" project="techpack/video/manifest" server="git://git-android.quicinc.com" tag="AU_TECHPACK_VIDEO.LA.2.6.R1.00.00.00.000.009" targets="video"/>
+    <image name="AUDIO.LA.9.1.r1" project="techpack/audio/manifest" server="git://git-android.quicinc.com" tag="AU_TECHPACK_AUDIO.LA.9.1.R1.00.00.00.000.009" targets="audio"/>
+    <image bins_path="LA.QSSI.14.1.r1" default="true" name="LA.QSSI.14.1.r1" project="la/system/manifest" server="git://git-android.quicinc.com" tag="AU_LINUX_ANDROID_LA.QSSI.14.1.R1.14.00.00.1541.008" targets="qssi_wear32,qssi_32go"/>
+    <image name="DISPLAY.LA.4.1.r1" project="techpack/display/manifest" server="git://git-android.quicinc.com" tag="AU_TECHPACK_DISPLAY.LA.4.1.R1.00.00.00.000.007" targets="display"/>
+    <image name="KERNEL.PLATFORM.3.6.r1" project="kernelplatform/manifest" server="git://git-android.quicinc.com" tag="AU_LINUX_KERNEL.PLATFORM.3.6.R1.00.00.00.221.012" targets="pitti"/>
+    <image name="SENSORS.LA.4.1.r1" project="techpack/sensors/manifest" server="git://git-android.quicinc.com" tag="AU_TECHPACK_SENSORS.LA.4.1.R1.00.00.00.000.009" targets="sensor"/>
+    <image name="GRAPHICS.LA.14.4.r1" project="techpack/graphics/manifest" server="git://git-android.quicinc.com" tag="AU_TECHPACK_GRAPHICS.LA.14.4.R1.00.00.00.000.007" targets="graphics"/>
+  </refs>
+  <remote name="clo" fetch="https://git.codelinaro.org/clo/la" review="codelinaro.org"/>
+  <default remote="clo" revision="partner-android/r-fs-release"/>
+  <project name="device/qcom/common" revision="refs/heads/qcom-devices.wear.lnx.8.0.r2-rel">
+    <linkfile src="generate_extra_images.mk" dest="vendor/qcom/build/tasks/generate_extra_images.mk"/>
+  </project>
+  <project name="device/qcom/sepolicy_vndr" revision="refs/heads/sepolicy-vndr-wear.lnx.14.2.r1-rel"/>
+  <project name="device/qcom/vendor-common" revision="refs/heads/qcom-devices.wear.lnx.8.0.r2-rel"/>
+  <project name="meta-qti-touch" path="disregard/poky/meta-qti-touch" revision="refs/heads/touch-kernel.lnx.5.15.r46-rel"/>
+  <project name="platform/hardware/qcom/bootctrl" path="hardware/qcom/bootctrl" revision="refs/heads/android-core.lnx.14.0.r17-rel"/>
+  <project name="platform/hardware/qcom/media" path="hardware/qcom/media" revision="refs/heads/lnx.omx.core.1.0.r101-rel">
+    <linkfile src="product.mk" dest="vendor/qcom/defs/product-defs/vendor/video-product.mk"/>
+  </project>
+  <project name="platform/hardware/qcom/thermal" path="vendor/qcom/opensource/thermal-hal" revision="refs/heads/ppat-corepower.lnx.14.0.r36-rel"/>
+  <project name="platform/packages/apps/SnapdragonCamera" path="vendor/codeaurora/packages/apps/SnapdragonCamera" revision="refs/heads/camera-snapdragoncamera-wear.lnx.4.3.r2-rel">
+    <linkfile src="app_snapcam_system_product.mk" dest="vendor/qcom/defs/product-defs/vendor/app_snapcam_product.mk"/>
+  </project>
+  <project name="platform/vendor/opensource/camera-kernel" path="vendor/qcom/opensource/camera-kernel" revision="refs/heads/camera-kernel-wear.lnx.4.3.r1-rel" groups="cyborg"/>
+  <project name="platform/vendor/opensource/dataipa" path="vendor/qcom/opensource/dataipa" revision="refs/heads/data-kernel.lnx.3.0.r47-rel">
+    <linkfile src="dataipa_dlkm_vendor_board.mk" dest="vendor/qcom/defs/board-defs/vendor/dataipa_dlkm_vendor_board.mk"/>
+    <linkfile src="dataipa_dlkm_vendor_product.mk" dest="vendor/qcom/defs/product-defs/vendor/dataipa_dlkm_vendor_product.mk"/>
+    <linkfile src="dataipa_binary_vendor_product.mk" dest="vendor/qcom/defs/product-defs/vendor/dataipa_binary_vendor_product.mk"/>
+  </project>
+  <project name="platform/vendor/opensource/synx-kernel" path="vendor/qcom/opensource/synx-kernel" revision="refs/heads/synx-kernel.lnx.1.0.r10-rel">
+    <linkfile src="synx_kernel_product.mk" dest="vendor/qcom/defs/product-defs/vendor/synx_kernel_product.mk"/>
+    <linkfile src="synx_kernel_board.mk" dest="vendor/qcom/defs/board-defs/vendor/synx_kernel_board.mk"/>
+  </project>
+  <project name="platform/vendor/opensource/touch-drivers" path="vendor/qcom/opensource/touch-drivers" revision="refs/heads/touch-kernel.lnx.5.15.r46-rel">
+    <linkfile src="touch_driver_board.mk" dest="vendor/qcom/defs/board-defs/vendor/touch_driver_board.mk"/>
+    <linkfile src="touch_driver_product.mk" dest="vendor/qcom/defs/product-defs/vendor/touch_driver_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom-opensource/core-utils-vendor" path="vendor/qcom/opensource/core-utils-vendor" revision="refs/heads/android-core.lnx.14.0.r17-rel"/>
+  <project name="platform/vendor/qcom-opensource/data-ipa-cfg-mgr" path="vendor/qcom/opensource/data-ipa-cfg-mgr" revision="refs/heads/data.lnx.14.0.r10-rel">
+    <linkfile src="ipacm_vendor_product.mk" dest="vendor/qcom/defs/product-defs/vendor/ipacm_vendor_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom-opensource/dataservices" path="vendor/qcom/opensource/dataservices" revision="refs/heads/data.lnx.14.0.r10-rel">
+    <linkfile src="dataservices_vendor_product.mk" dest="vendor/qcom/defs/product-defs/vendor/dataservices_vendor_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom-opensource/dpm" path="vendor/qcom/opensource/dpm" revision="refs/heads/data.lnx.14.0.r10-rel"/>
+  <project name="platform/vendor/qcom-opensource/healthd-ext" path="vendor/qcom/opensource/healthd-ext" revision="refs/heads/android-core.lnx.14.0.r17-rel">
+    <linkfile src="health-vendor-product.mk" dest="vendor/qcom/defs/product-defs/vendor/health_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom-opensource/lights" path="vendor/qcom/opensource/lights" revision="refs/heads/core-technologies.lnx.14.0.r81-rel">
+    <linkfile src="lights-vendor-product.mk" dest="vendor/qcom/defs/product-defs/vendor/lights_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom-opensource/mmc-utils" path="vendor/qcom/opensource/mmc-utils" revision="refs/heads/core-technologies.lnx.14.0.r81-rel"/>
+  <project name="platform/vendor/qcom-opensource/power" path="vendor/qcom/opensource/power" revision="refs/heads/power.lnx.7.0.r18-rel">
+    <linkfile src="power-vendor-product.mk" dest="vendor/qcom/defs/product-defs/vendor/power-vendor-product.mk"/>
+    <linkfile src="power-vendor-board.mk" dest="vendor/qcom/defs/board-defs/vendor/power-vendor-board.mk"/>
+  </project>
+  <project name="platform/vendor/qcom-opensource/recovery-ext" path="vendor/qcom/opensource/recovery-ext" revision="refs/heads/android-core.lnx.14.0.r17-rel"/>
+  <project name="platform/vendor/qcom-opensource/shortcut-fe" path="shortcut-fe" revision="refs/heads/data.lnx.14.0.r10-rel"/>
+  <project name="platform/vendor/qcom-opensource/thermal-engine" path="vendor/qcom/opensource/thermal-engine" revision="refs/heads/android-core.lnx.14.0.r17-rel"/>
+  <project name="platform/vendor/qcom-opensource/time-services" path="vendor/qcom/opensource/time-services" revision="refs/heads/core-technologies.lnx.14.0.r81-rel"/>
+  <project name="platform/vendor/qcom-opensource/tools" path="vendor/qcom/opensource/tools" revision="refs/heads/opensource-tools.lnx.1.0.r429-rel"/>
+  <project name="platform/vendor/qcom-opensource/ts_firmware" path="vendor/qcom/opensource/ts_firmware" revision="refs/heads/touch.lnx.3.0.r36-rel"/>
+  <project name="platform/vendor/qcom-opensource/usb" path="vendor/qcom/opensource/usb" revision="refs/heads/core-technologies.lnx.14.0.r81-rel">
+    <linkfile src="vendor_product.mk" dest="vendor/qcom/defs/product-defs/vendor/usb_vendor_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom-opensource/vibrator" path="vendor/qcom/opensource/vibrator" revision="refs/heads/core-technologies.lnx.14.0.r81-rel">
+    <linkfile src="vibrator-vendor-product.mk" dest="vendor/qcom/defs/product-defs/vendor/vibrator_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom/lahaina" path="device/qcom/lahaina" revision="refs/heads/qcom-devices.wear.lnx.8.0.r2-rel"/>
+  <project name="platform/vendor/qcom/opensource/datarmnet" path="vendor/qcom/opensource/datarmnet" revision="refs/heads/data-kernel.lnx.3.0.r47-rel">
+    <linkfile src="datarmnet_dlkm_vendor_board.mk" dest="vendor/qcom/defs/board-defs/vendor/datarmnet_dlkm_vendor_board.mk"/>
+    <linkfile src="datarmnet_dlkm_vendor_product.mk" dest="vendor/qcom/defs/product-defs/vendor/datarmnet_dlkm_vendor_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom/opensource/datarmnet-ext" path="vendor/qcom/opensource/datarmnet-ext" revision="refs/heads/data-kernel.lnx.3.0.r47-rel">
+    <linkfile src="datarmnet_ext_dlkm_vendor_board.mk" dest="vendor/qcom/defs/board-defs/vendor/datarmnet_ext_dlkm_vendor_board.mk"/>
+    <linkfile src="datarmnet_ext_dlkm_vendor_product.mk" dest="vendor/qcom/defs/product-defs/vendor/datarmnet_ext_dlkm_vendor_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom/opensource/dsp-kernel" path="vendor/qcom/opensource/dsp-kernel" revision="refs/heads/dsp-kernel.lnx.1.2.r1-rel">
+    <linkfile src="dsp_kernel_board.mk" dest="vendor/qcom/defs/board-defs/vendor/dsp_kernel_board.mk"/>
+    <linkfile src="dsp_kernel_product.mk" dest="vendor/qcom/defs/product-defs/vendor/dsp_kernel_product.mk"/>
+  </project>
+  <project name="platform/vendor/qcom/opensource/securemsm-kernel" path="vendor/qcom/opensource/securemsm-kernel" revision="refs/heads/sec-kernel.lnx.14.0.r64-rel">
+    <linkfile src="securemsm_kernel_product_board.mk" dest="vendor/qcom/defs/product-defs/vendor/securemsm_kernel_product_board.mk"/>
+    <linkfile src="securemsm_kernel_vendor_board.mk" dest="vendor/qcom/defs/board-defs/vendor/securemsm_kernel_vendor_board.mk"/>
+  </project>
+  <project name="platform/vendor/qcom/pitti_wear32" path="device/qcom/pitti_wear32" revision="refs/heads/qcom-devices.wear.lnx.8.0.r2-rel"/>
+  <project name="platform/vendor/qcom/taro" path="device/qcom/taro" revision="refs/heads/qcom-devices.wear.lnx.8.0.r2-rel"/>
+  <project name="platform/vendor/st/opensource/eSE-driver" path="vendor/st/opensource/eSE-driver" revision="refs/heads/ese-st-vendor.lnx.14.0.r11-rel">
+    <linkfile src="ese_kernel_product.mk" dest="vendor/qcom/defs/product-defs/vendor/ese_kernel_product.mk"/>
+    <linkfile src="ese_kernel_board.mk" dest="vendor/qcom/defs/board-defs/vendor/ese_kernel_board.mk"/>
+  </project>
+  <project name="platform/vendor/st/opensource/keymaster" path="vendor/st/opensource/keymaster" revision="refs/heads/ese-st-vendor.lnx.14.0.r11-rel">
+    <linkfile src="keymint/keymint_stm_vendor_board.mk" dest="vendor/qcom/defs/board-defs/vendor/keymint-stm-vendor-board.mk"/>
+    <linkfile src="keymint/keymint_stm_vendor_product.mk" dest="vendor/qcom/defs/product-defs/vendor/keymint-stm-vendor-product.mk"/>
+  </project>
+</manifest>
