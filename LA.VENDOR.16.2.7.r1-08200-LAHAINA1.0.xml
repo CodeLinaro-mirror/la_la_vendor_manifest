@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <refs>
+        <image name="LA.QSSI.16.0.R1" project="la/system/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_LINUX_ANDROID_LA.QSSI.16.0.R1.11.00.00.1274.162" targets="dummy"/>
+        <image name="GRAPHICS.LA.16.0.R6" project="techpack/graphics/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_TECHPACK_GRAPHICS.LA.16.0.R6.00.00.00.000.036" targets="dummy"/>
+        <image name="KERNEL.PLATFORM.5.0.R24" project="kernelplatform/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_LINUX_KERNEL.PLATFORM.5.0.R24.00.00.00.187.046" targets="dummy"/>
+        <image name="VIDEO.LA.5.1.R1" project="techpack/video/manifest" server="https://git.codelinaro.org/clo/la" tag="AU_TECHPACK_VIDEO.LA.5.1.R1.00.00.00.000.061" targets="dummy"/>
+    </refs>
+    <remote fetch="https://git.codelinaro.org/clo/la" name="clo-la"/>
+    <default remote="clo-la" revision="dummy_revision" sync-c="true" sync-tags="false"/>
+    <project remote="clo-la" name="device/qcom/common" path="device/qcom/common" revision="5fc2d997c70557709bf2c5af94cc3582672e78a3" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel">
+        <linkfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
+    </project>
+    <project remote="clo-la" name="device/qcom/sepolicy_vndr" path="device/qcom/sepolicy_vndr" revision="d6223ce244e9c6adad6923e591a2af9bbab70c3e" upstream="refs/heads/sepolicy.vndr.lnx.16.1.r2-rel"/>
+    <project remote="clo-la" name="device/qcom/vendor-common" path="device/qcom/vendor-common" revision="e06f89a4b3069931a5a9c9d64b5cc197727969fe" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="meta-qti-touch" path="disregard/poky/meta-qti-touch" revision="1d3184d133ea7cdea2c0a9f3d89a49295579880e" upstream="refs/heads/touch-kernel.lnx.11.0.r36-rel"/>
+    <project remote="clo-la" name="platform/hardware/qcom/audio" path="vendor/qcom/opensource/audio-hal/primary-hal" revision="633ce25c64f12599d0caab2e0bcebececc3a84ef" upstream="refs/heads/audio-hal.lnx.8.3.r1-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/audio_vendor_product.mk" src="configs/audio_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/hardware/qcom/bootctrl" path="hardware/qcom/bootctrl" revision="29fb77f96890fee5d2bf087497edcde1d8db3887" upstream="refs/heads/android-core.lnx.16.0.r13-rel"/>
+    <project remote="clo-la" name="platform/hardware/qcom/display" path="hardware/qcom/display" revision="677268e7a5bcdfb7fef4ac004740f1ed8871b1ec" upstream="refs/heads/display.lnx.7.11.r2-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/display-product.mk" src="config/display-product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/display-board.mk" src="config/display-board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/hardware/qcom/gps" path="hardware/qcom/gps" revision="3df1de7e2f2a1aab014fcc9adf38251f41b3508c" upstream="refs/heads/location.lnx.11.0.r17-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/gps-product-hal.mk" src="gps_vendor_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/gps-board.mk" src="gps_vendor_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/hardware/qcom/media" path="hardware/qcom/media" revision="53a7c2255ecf5490c987164228858f9dc052438c" upstream="refs/heads/lnx.omx.core.1.0.r88-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/video-product.mk" src="product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/hardware/qcom/thermal" path="vendor/qcom/opensource/thermal-hal" revision="7f3ab14df8de76e095404e2157f9e3076ed49a59" upstream="refs/heads/ppat-corepower.lnx.16.0.r16-rel"/>
+    <project remote="clo-la" name="platform/hardware/qcom/wlan" path="hardware/qcom/wlan" revision="34f35c9a15b6df35b1f9d1acb9776868587cc06a" upstream="refs/heads/wlan-aosp.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/packages/apps/SnapdragonCamera" path="vendor/codeaurora/packages/apps/SnapdragonCamera" revision="a6d77f459468ed1beb507e0cb194ebc316711d42" upstream="refs/heads/camera-SnapdragonCamera.lnx.4.4.r2-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/app_snapcam_product.mk" src="app_snapcam_system_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/system/qcom" path="vendor/qcom/opensource/softap" revision="af6c12786bd66fb2d4f205d223085b7179020692" upstream="refs/heads/wlan-service-mcc.lnx.1.0.r119-rel"/>
+    <project remote="clo-la" name="platform/vendor/nxp/opensource/driver" path="vendor/nxp/opensource/driver" revision="8e61224e5cfa08ea0f50b20af4299eaf336ef231" upstream="refs/heads/nfc-driver.lnx.16.0.r8-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/nfc-kernel-dlkm-vendor-product.mk" src="nfc_kernel_dlkm_vendor_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/nfc-kernel-dlkm-vendor-board.mk" src="nfc_kernel_dlkm_vendor_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/nxp/opensource/halimpl" path="vendor/nxp/opensource/halimpl" revision="7459fe6a5f207352b95343954a50bebb5b65436a" upstream="refs/heads/nfc-vendor.lnx.16.0.r8-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/nfc-vendor-product.mk" src="nfc_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/nxp/opensource/hidlimpl" path="vendor/nxp/opensource/hidlimpl" revision="6ba3f7bead57b29a37184ee35f69f916b48ae014" upstream="refs/heads/nfc-vendor.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/nxp/opensource/keymaster" path="vendor/nxp/opensource/keymaster" revision="2dddfe52cbe041e0b4e4053a673e4e4384fbff7f" upstream="refs/heads/ese-vendor.lnx.16.0.r8-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/javacard-vendor-board.mk" src="keymaster/javacard_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/javacard-vendor-product.mk" src="keymaster/javacard_vendor_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/keymint-vendor-board.mk" src="keymint/keymint_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/keymint-vendor-product.mk" src="keymint/keymint_vendor_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/weaver-vendor-board.mk" src="weaver/weaver_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/weaver-vendor-product.mk" src="weaver/weaver_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/audio-kernel" path="vendor/qcom/opensource/audio-kernel/legacy" revision="5a1060e1fb07851741a1c522f62fce089db62baf" upstream="refs/heads/audio-kernel-legacy.lnx.6.12.r1-rel"/>
+    <project remote="clo-la" name="platform/vendor/opensource/camera-kernel" path="vendor/qcom/opensource/camera-kernel" revision="fe903075e4ff8f3cb41ec1b03cdcc29c144b415e" upstream="refs/heads/camera-kernel.lnx.4.4.r1-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/camera-kernel_board.mk" src="board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/camera-kernel_product.mk" src="product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/cvp-devicetree" path="vendor/qcom/opensource/cvp-devicetree" revision="7bd846faf75341913e2e437ee3a6c86ca37a16f6" upstream="refs/heads/cvp-kernel.lnx.2.0.r1-rel"/>
+    <project remote="clo-la" name="platform/vendor/opensource/cvp-kernel" path="vendor/qcom/opensource/cvp-kernel" revision="f076ef77ba4e8906a10d6d560c82e5939934e25b" upstream="refs/heads/cvp-kernel.lnx.2.0.r1-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/cvp_kernel_product.mk" src="cvp_kernel_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/cvp_kernel_board.mk" src="cvp_kernel_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/dataipa" path="vendor/qcom/opensource/dataipa" revision="0c12bf30ed92888e27014195737ee136b1e153b3" upstream="refs/heads/data-kernel.lnx.5.0.r13-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/dataipa_dlkm_vendor_board.mk" src="dataipa_dlkm_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/dataipa_dlkm_vendor_product.mk" src="dataipa_dlkm_vendor_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/dataipa_binary_vendor_product.mk" src="dataipa_binary_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/display-core" path="vendor/qcom/opensource/display-core" revision="ee707ed4a701d51773e3bc4ddf20c620cd173fd7" upstream="refs/heads/display.lnx.7.11.r2-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/display-core-product.mk" src="config/display-core-product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/display-devicetree" path="vendor/qcom/opensource/display-devicetree" revision="66597b34c76c12de8b1c3355dd366fd74402e6ab" upstream="refs/heads/display-kernel.lnx.1.11.r4-rel"/>
+    <project remote="clo-la" name="platform/vendor/opensource/display-drivers" path="vendor/qcom/opensource/display-drivers" revision="cacf41208c517d2adc7db112107a16453dc779d5" upstream="refs/heads/display-kernel.lnx.1.11.r4-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/display_driver_product.mk" src="display_driver_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/display_driver_board.mk" src="display_driver_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/display-intf" path="vendor/qcom/opensource/display-intf" revision="b54e972e98c1756906fcb22ff4d8437917f001c9" upstream="refs/heads/display.lnx.7.11.r2-rel"/>
+    <project remote="clo-la" name="platform/vendor/opensource/mm-drivers" path="vendor/qcom/opensource/mm-drivers" revision="cb27a349620276aecb0aa4ec0711121e3c8472de" upstream="refs/heads/display-kernel.lnx.1.11.r4-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/mm_driver_product.mk" src="mm_driver_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/mm_driver_board.mk" src="mm_driver_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/mm-sys-kernel" path="vendor/qcom/opensource/mm-sys-kernel" revision="9ee78c53aecfe72913f5644c138e92504e181e3d" upstream="refs/heads/ubwcp-kernel.lnx.1.0.r19-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/ubwcp_kernel_vendor_board.mk" src="ubwcp_kernel_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/ubwcp_kernel_product_board.mk" src="ubwcp_kernel_product_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/synx-kernel" path="vendor/qcom/opensource/synx-kernel" revision="f5b3419aeb6e4a774b26b9eabb973b5660d355cc" upstream="refs/heads/synx-driver.lnx.0.5.r1-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/synx_kernel_product.mk" src="synx_kernel_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/synx_kernel_board.mk" src="synx_kernel_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/opensource/touch-drivers" path="vendor/qcom/opensource/touch-drivers" revision="ef7c43e151f97f6988a859e479ba75ae3facd349" upstream="refs/heads/touch-kernel.lnx.11.0.r36-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/touch_driver_board.mk" src="touch_driver_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/touch_driver_product.mk" src="touch_driver_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/audio-hal/st-hal" path="vendor/qcom/opensource/audio-hal/st-hal" revision="e2f2663e38e6200bdf79a2531a8b2cfc0dc56e44" upstream="refs/heads/audio-hal.lnx.8.3.r1-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/avf-qcom" path="vendor/qcom/opensource/avf-qcom" revision="972a42fe13017083ef149ef712a228cdf36d5b72" upstream="refs/heads/android-core.lnx.16.0.r13-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/bt-devicetree" path="vendor/qcom/opensource/bt-devicetree" revision="a55963eb7735a95b78436df63b6c21f3812cff00" upstream="refs/heads/bt-kernel.lnx.16.0.r10-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/bt-kernel" path="vendor/qcom/opensource/bt-kernel" revision="edd21caf773b5bf920477908a3ccff50721117db" upstream="refs/heads/bt-kernel.lnx.16.0.r10-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/bt_kernel_vendor_board.mk" src="bt_kernel_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/bt_kernel_product_board.mk" src="bt_kernel_product_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/core-utils-vendor" path="vendor/qcom/opensource/core-utils-vendor" revision="003a95b5f0bb9566c151941d8daba70f29c7d338" upstream="refs/heads/android-core.lnx.16.0.r13-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/data-devicetree" path="vendor/qcom/opensource/data-devicetree" revision="dd123a953c394e94aac33a0593f5f993a5eebd3f" upstream="refs/heads/data.lnx.16.0.r12-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/data-ipa-cfg-mgr" path="vendor/qcom/opensource/data-ipa-cfg-mgr" revision="98bdceea73c60cd02d7a152de3c904b7d6c6beb6" upstream="refs/heads/data.lnx.16.0.r12-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/ipacm_vendor_product.mk" src="ipacm_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/data-kernel" path="vendor/qcom/opensource/data-kernel" revision="8bc9352ff76222dac0e68eb5b8cb703700248a14" upstream="refs/heads/data.lnx.16.0.r12-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/data_dlkm_vendor_board.mk" src="data_dlkm_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/data_dlkm_vendor_product.mk" src="data_dlkm_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/dataservices" path="vendor/qcom/opensource/dataservices" revision="bc0d56378007913a9db367cf8c9fd468971f4d4e" upstream="refs/heads/data.lnx.16.0.r12-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/dataservices_vendor_product.mk" src="dataservices_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/dpm" path="vendor/qcom/opensource/dpm" revision="8c98e1d8b44806ee6765de339107f2f3cb64e427" upstream="refs/heads/data.lnx.16.0.r12-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/ecosw" path="vendor/qcom/opensource/ecosw" revision="add1dd9847897ce37e917ac4bcafc6f38d151eb1" upstream="refs/heads/android_ecosw.lnx.3.0.r37-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/fst-manager" path="vendor/qcom/opensource/fst-manager" revision="be38150a98752facaacca7297aa214ecbed16cd8" upstream="refs/heads/wigig-vndr.lnx.12.0.r41-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/healthd-ext" path="vendor/qcom/opensource/healthd-ext" revision="ef6b4fb4f2a1741b059ac094029dda7d39b8f6eb" upstream="refs/heads/android-core.lnx.16.0.r13-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/health_product.mk" src="health-vendor-product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/iot-core-oss" path="vendor/qcom/opensource/iot-core-oss" revision="171b63339627d757d6b6ab6470e99fc596703394" upstream="refs/heads/iot-core-algs.lnx.1.0.r39-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/lights" path="vendor/qcom/opensource/lights" revision="563238f0214105e2aac2379833d05f5c6a170474" upstream="refs/heads/core-technologies.lnx.16.0.r16-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/lights_product.mk" src="lights-vendor-product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/location" path="vendor/qcom/opensource/location" revision="343b10bfe3d94a08d9ceb4511fa74b4d7c5ad5cf" upstream="refs/heads/location.lnx.11.0.r17-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/gps-product-opensource.mk" src="gps_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/mmc-utils" path="vendor/qcom/opensource/mmc-utils" revision="a986630baafc1a2b579618b702e778ec6b25bd92" upstream="refs/heads/core-technologies.lnx.16.0.r16-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/nfc-devicetree" path="vendor/qcom/opensource/nfc-devicetree" revision="9c59ef97e32f327466d4e33312aca8a8117e46fa" upstream="refs/heads/nfc-devicetree.lnx.16.0.r9-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/power" path="vendor/qcom/opensource/power" revision="6086e76037ab62854d97bc3373642168e558fc68" upstream="refs/heads/power.lnx.8.0.r12-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/power-vendor-product.mk" src="power-vendor-product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/power-vendor-board.mk" src="power-vendor-board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/recovery-ext" path="vendor/qcom/opensource/recovery-ext" revision="cfccb0b612a79853786a177e72170fcb77d57fb0" upstream="refs/heads/android-core.lnx.16.0.r13-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/shortcut-fe" path="shortcut-fe" revision="214ece874ced71fcbeb2fbc0a218b0824be60c34" upstream="refs/heads/data.lnx.16.0.r12-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/synx-devicetree" path="vendor/qcom/opensource/synx-devicetree" revision="8ff0e9ce8ef22420a4c477b66a0d369c3145821c" upstream="refs/heads/synx-devicetree.lnx.2.1.r13-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/thermal-engine" path="vendor/qcom/opensource/thermal-engine" revision="3254395841b3d4dec4b309494dac256fe2c68aa4" upstream="refs/heads/android-core.lnx.16.0.r13-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/time-services" path="vendor/qcom/opensource/time-services" revision="2cd5b741b20b03da9105669f2dee9116931bc984" upstream="refs/heads/core-technologies.lnx.16.0.r16-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/tools" path="vendor/qcom/opensource/tools" revision="6909badeb673f80e5982284798b3afc47ad108dc" upstream="refs/heads/opensource-tools.lnx.1.0.r388-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/ts_firmware" path="vendor/qcom/opensource/ts_firmware" revision="2880e2a020f48835fd225ca47ba3775f3126f204" upstream="refs/heads/touch.lnx.11.0.r28-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/ufs-tools" path="vendor/qcom/opensource/ufs-tools" revision="3919275b214d9f98d68c6a9e1d38a8c95e5574dd" upstream="refs/heads/core-technologies.lnx.16.0.r16-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/ufs-tools_vendor_product.mk" src="vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/usb" path="vendor/qcom/opensource/usb" revision="f8b5a8cdd0770a1cd094582b7a8483a0fef59a31" upstream="refs/heads/core-technologies.lnx.16.0.r16-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/usb_vendor_product.mk" src="vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/vibrator" path="vendor/qcom/opensource/vibrator" revision="05f6d2475b74130211aed857d42dd194eac281c9" upstream="refs/heads/core-technologies.lnx.16.0.r16-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/vibrator_product.mk" src="vibrator-vendor-product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/wigig" path="vendor/qcom/opensource/wigig" revision="5b1bdbbfdb2410cbe304fc402047df67604409a7" upstream="refs/heads/wigig-vndr.lnx.12.0.r41-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/wlan/fw-api" path="vendor/qcom/opensource/wlan/fw-api" revision="c315caa80a1d560f3053a747427489893405114a" upstream="refs/heads/wlan-api.lnx.1.0.r322-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/wlan/platform" path="vendor/qcom/opensource/wlan/platform" revision="a712207d471c24f508784da9f07f4710ab6177c8" upstream="refs/heads/wlan-platform.lnx.2.0.r24-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn" path="vendor/qcom/opensource/wlan/qca-wifi-host-cmn" revision="4a3e88740e940f273635e3359790e4f7102ff381" upstream="refs/heads/wlan-cmn.driver.lnx.2.0.9.r28-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/wlan/qcacld-3.0" path="vendor/qcom/opensource/wlan/qcacld-3.0" revision="18338c8fef2fbc603001085683ebcd02f3a89ff8" upstream="refs/heads/wlan-cld3.driver.lnx.2.0.9.r28-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/wlan/utils/sigma-dut" path="vendor/qcom/opensource/wlan/utils/sigma-dut" revision="9dda559f6aea83f775465ad760880760e0e94fc7" upstream="refs/heads/wlan-service-mcc.lnx.1.0.r119-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom-opensource/wlan/wlan-devicetree" path="vendor/qcom/opensource/wlan/wlan-devicetree" revision="f39fa5484ae7573e6f0352cea76d66b2b1d40d6c" upstream="refs/heads/wlan-platform.lnx.2.0.r24-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/blair" path="device/qcom/blair" revision="d79ad72acd991d143d55bb5f2348894f70a5aa02" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/canoe" path="device/qcom/canoe" revision="4e92f98c4a110095a50a39b800e44c21aa28bfdd" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/chora" path="device/qcom/chora" revision="68e9014b64eb8f612c2c676113f61a491bbb7828" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/hamoa" path="device/qcom/hamoa" revision="9022d2ab21574916c63c005239b330b3d6d31b3d" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/kalama" path="device/qcom/kalama" revision="54a35b7b42aaaf25665853271f83c16e5fda6798" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/lahaina" path="device/qcom/lahaina" revision="b789d54512321f73ccf586172afe73c5fd6be9dd" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/lahaina612" path="device/qcom/lahaina612" revision="beaad956de45594d0e7a2ac2436113f69e5c7025" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/agm" path="vendor/qcom/opensource/agm" revision="4b60cd614283c22044bb0e4298f28a22e28140f9" upstream="refs/heads/audio-platform-arintf.lnx.1.0.r143-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/arpal-lx" path="vendor/qcom/opensource/pal" revision="8a2e2b548009e31a76d901020053a330b7dbadcd" upstream="refs/heads/audio-platform-arintf.lnx.1.0.r143-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/audio-kernel-ar" path="vendor/qcom/opensource/audio-kernel" revision="c66203520a29e0e74d3b97c4742a58d33f5f916e" upstream="refs/heads/audio-kernel-legacy.lnx.6.12.r1-rel" groups="kernel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/audio_kernel_vendor_board.mk" src="audio_kernel_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/audio_kernel_product_board.mk" src="audio_kernel_product_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/bt-external" path="vendor/qcom/opensource/bt-external" revision="126ebb5efd9af00403d4781404517492d8ec0f74" upstream="refs/heads/bt-vndr.lnx.16.0.r9-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/datarmnet" path="vendor/qcom/opensource/datarmnet" revision="12f35eea2370ada564e3c799d4e88c35afdddd23" upstream="refs/heads/data-kernel.lnx.5.0.r13-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/datarmnet_dlkm_vendor_board.mk" src="datarmnet_dlkm_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/datarmnet_dlkm_vendor_product.mk" src="datarmnet_dlkm_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/datarmnet-ext" path="vendor/qcom/opensource/datarmnet-ext" revision="50ec058ef26641ba63dcc3755adca9d6c057340e" upstream="refs/heads/data-kernel.lnx.5.0.r13-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/datarmnet_ext_dlkm_vendor_board.mk" src="datarmnet_ext_dlkm_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/datarmnet_ext_dlkm_vendor_product.mk" src="datarmnet_ext_dlkm_vendor_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/dsp-devicetree" path="vendor/qcom/opensource/dsp-devicetree" revision="abfd35952f9daf5ba6a63afd80a7a836b69426d2" upstream="refs/heads/dsp-kernel.lnx.2.2.r9-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/dsp-kernel" path="vendor/qcom/opensource/dsp-kernel" revision="0fada917b1d63472ea12cc3100903215bf48acd1" upstream="refs/heads/dsp-kernel.lnx.2.2.r9-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/dsp_kernel_board.mk" src="dsp_kernel_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/dsp_kernel_product.mk" src="dsp_kernel_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/securemsm-devicetree" path="vendor/qcom/opensource/securemsm-devicetree" revision="f738ce673da12b3d7acea34c3f53bbfef34f1789" upstream="refs/heads/sec-kernel.lnx.14.16.r7-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/securemsm-kernel" path="vendor/qcom/opensource/securemsm-kernel" revision="667236dffd2696e088a7759cde9c02b2029403c9" upstream="refs/heads/sec-kernel.lnx.14.16.r7-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/securemsm_kernel_product_board.mk" src="securemsm_kernel_product_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/securemsm_kernel_vendor_board.mk" src="securemsm_kernel_vendor_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom/opensource/spu-kernel" path="vendor/qcom/opensource/spu-kernel" revision="fb5419b1f3b915b5999e97488341afdbd8479591" upstream="refs/heads/spu-kernel.lnx.3.25.r1-rel">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/spu_driver_board.mk" src="spu_driver_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/spu_driver_product.mk" src="spu_driver_product.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/qcom/sun" path="device/qcom/sun" revision="92fc43e1dfe40617d6c5a6eb510f40f0f390057a" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/taro" path="device/qcom/taro" revision="2087c6f94baf16bc41f7eef50428117a91c2983e" upstream="refs/heads/qcom-devices.lnx.16.0.r8-rel"/>
+    <project remote="clo-la" name="platform/vendor/qcom/wlan" path="device/qcom/wlan" revision="66b41050448d80af3c43ec2c6fe34de5067b1abf" upstream="refs/heads/wlan-service-mcc.lnx.1.0.r119-rel"/>
+    <project remote="clo-la" name="platform/vendor/st/opensource/driver" path="vendor/st/opensource/driver" revision="81d641dab51ad5591762fc91ce982d585bdddeeb" upstream="refs/heads/nfc-st-driver.lnx.16.0.r8-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/nfc-kernel-dlkm-vendor-product-stm.mk" src="nfc_kernel_dlkm_vendor_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/nfc-kernel-dlkm-vendor-board-stm.mk" src="nfc_kernel_dlkm_vendor_board.mk"/>
+    </project>
+    <project remote="clo-la" name="platform/vendor/st/opensource/halimpl" path="vendor/st/opensource/halimpl" revision="2332437df4056e9be190d5a9f227445446cc4e99" upstream="refs/heads/nfc-st-vendor.lnx.16.0.r7-rel">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/nfc-vendor-product-stm.mk" src="nfc_vendor_product.mk"/>
+    </project>
+</manifest>
